@@ -1,10 +1,112 @@
 <html>
+<html lang="en">
 <head>
-<title>Ariq Naufal Wahyono</title>
+    <title>Personal Web</title>
+
+    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center; 
+            color: #333; 
+            margin-bottom: 10px;
+        }
+        .bio {
+            font-size: 16px;
+            color: #666; 
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center; 
+            gap: 50px;
+            margin-bottom: 20px;
+        }
+        .social-media img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+        .date-time {
+            font-size: 14px;
+            color: #ffffff; 
+            position:absolute;
+            bottom: 10px;
+            text-align: center; 
+        }
+    </style>
 </head>
 <body>
-    <p>Ariq Naufal Wahyono</p>
-    <p>1202223162</p>
-    <p>S1 - Sistem Informasi</p>
+
+    <div class="container">
+    <picture>
+        <img src="foto twibbon.jpeg" alt="Profile Picture" class="profile-picture">
+    </picture>
+
+    <h2 class="name">Ariq Naufal Wahyono</h2>
+
+    <h1 class="bio">1202223162/SI4610</h1>
+
+    <div class="social-media">
+        <a href="https://www.instagram.com/ariq60/" target="_blank">
+            <img src="instagram-logo.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/ariqnaufalwahyono/" target="_blank">
+            <img src="LinkedIn-logo.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/ariqnw16" target="_blank">
+            <img src="GitHub-Logo.png" alt="GitHub">
+        </a>
+    </div>
+    </div>
+
+    <div class="date-time" id="dateTime"></div>
+
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('dateTime');
+            const now = new Date();
+            const options = { 
+                weekday: 'long', year: 'numeric', month: 'long', 
+                day: 'numeric', hour: '2-digit', minute: '2-digit' 
+            };
+            dateTimeElement.textContent = now.toLocaleDateString('en-US', options);
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 60000); 
+    </script>
+
 </body>
 </html>
